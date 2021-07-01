@@ -1,0 +1,14 @@
+.nav{
+    height: 75px;
+    box-shadow: 0px 1px 8px #8888;
+    display: flex;
+    align-items: center;
+}
+
+.navicon{
+    flex: 0.5;
+}
+
+h2{
+    cursor: pointer;
+}
