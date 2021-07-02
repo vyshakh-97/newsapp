@@ -11,9 +11,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import DehazeIcon from '@material-ui/icons/Dehaze';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 const useStyles = makeStyles({
   list: {
-    width: 210,
+    width: 180,
+    paddingLeft:17,
+    paddingRight:17,
   },
   fullList: {
     width: 'auto',
@@ -25,7 +29,11 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-
+  const theme = createMuiTheme({
+    palette: {
+      type: "dark",
+    },
+  });
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -67,9 +75,11 @@ export default function TemporaryDrawer() {
     <div>
         <React.Fragment key={"left"}>
           <Button onClick={toggleDrawer("left", true)}><DehazeIcon /></Button>
+          <ThemeProvider theme={theme}>
           <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
             {list("left")}
           </Drawer>
+          </ThemeProvider>
         </React.Fragment>
     </div>
   );
