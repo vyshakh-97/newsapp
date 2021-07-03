@@ -6,25 +6,27 @@ import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import categories from './assets/Categories';
 const useStyles = makeStyles({
   list: {
     width: 180,
     paddingLeft:17,
     paddingRight:17,
+    fontSize:17,
+  },
+  listitemtext:{
+    fontSize:10,
   },
   fullList: {
     width: 'auto',
   },
 });
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer({setCategory}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -52,19 +54,15 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+          <ListItem>
+           <h3>Categories</h3>
           </ListItem>
-        ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+        {categories.map((text, index) => (
+          <ListItem style={{height:55, borderRadius:8}} button key={text} onClick={setCategory(text)}>
+            <ListItemText className={clsx(classes.listitemtext)} primary={text}/>
           </ListItem>
         ))}
       </List>

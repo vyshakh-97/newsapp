@@ -1,11 +1,11 @@
 import React from 'react'
 import "./Navigation.css"
 import Leftbar from "./Leftbar"
-const Navigation = () => {
+const Navigation = ({setCategory}) => {
     return (
         <div className="nav">
             <div className="navicon">
-            <Leftbar />
+            <Leftbar setCategory={setCategory} />
             </div>
             <h2>
             Newsfy
