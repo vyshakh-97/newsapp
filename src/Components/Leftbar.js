@@ -18,9 +18,6 @@ const useStyles = makeStyles({
     paddingRight:17,
     fontSize:17,
   },
-  listitemtext:{
-    fontSize:10,
-  },
   fullList: {
     width: 'auto',
   },
@@ -62,7 +59,7 @@ export default function TemporaryDrawer({setCategory}) {
       <List>
         {categories.map((text, index) => (
           <ListItem style={{height:55, borderRadius:8}} button key={text} onClick={setCategory(text)}>
-            <ListItemText className={clsx(classes.listitemtext)} primary={text}/>
+            <ListItemText primary={text}/>
           </ListItem>
         ))}
       </List>
