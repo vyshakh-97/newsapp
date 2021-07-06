@@ -3,6 +3,7 @@ import Navigation from "./Components/Navigation"
 import {useState, useEffect} from "react"
 import axios from 'axios'
 import apikey from "./Components/assets/config"
+import Newscard from './Components/Newscard';
 function App() {
   const [category, setCategory] = useState("general");
   const [newsArray, setnewsArray]= useState([]);
@@ -24,6 +25,7 @@ console.log(newsArray);
   return (
     <div className="App">
     <Navigation setCategory={setCategory} />
+    <Newscard newsArray={newsArray} newsResult={newsResult} />
     </div>
   );
 }
