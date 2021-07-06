@@ -3,7 +3,7 @@ import Navigation from "./Components/Navigation"
 import {useState, useEffect} from "react"
 import axios from 'axios'
 import apikey from "./Components/assets/config"
-import Newscard from './Components/Newscard';
+import News from './Components/News';
 function App() {
   const [category, setCategory] = useState("general");
   const [newsArray, setnewsArray]= useState([]);
@@ -18,14 +18,13 @@ function App() {
       console.log(error);
     }
   };
-console.log(newsArray);
   useEffect(() => {
     newsApi();
   },[newsResult, category])
   return (
     <div className="App">
     <Navigation setCategory={setCategory} />
-    <Newscard newsArray={newsArray} newsResult={newsResult} />
+    <News newsArray={newsArray} newsResult={newsResult} />
     </div>
   );
 }
