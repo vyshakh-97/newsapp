@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Newscard = ({newsItem}) => {
+const Newscard = ({ newsItem }) => {
+    console.log({newsItem});
     return (
-        <div>
-            
+        <div className="newscard">
+            <img alt={newsItem.title} src={newsItem.urlToImage} />
         </div>
     )
 }

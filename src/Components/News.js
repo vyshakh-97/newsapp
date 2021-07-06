@@ -5,9 +5,9 @@ const News = ({newsArray,newsResult}) => {
     return (
         <Container maxWidth="md">
         <div className="news">
-           {newsArray.map((newsItem) => {
+           {newsArray.map((newsItem) => (
             <Newscard newsItem={newsItem} key={newsItem.title} />
-           } ) }
+            ) ) }
         </div>
         </Container>
     )
