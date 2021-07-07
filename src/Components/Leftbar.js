@@ -16,14 +16,13 @@ const useStyles = makeStyles({
     width: 180,
     paddingLeft:17,
     paddingRight:17,
-    fontSize:17,
   },
   fullList: {
     width: 'auto',
   },
 });
 
-export default function TemporaryDrawer({setCategory}) {
+export default function TemporaryDrawer({ setCategory }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -58,14 +57,13 @@ export default function TemporaryDrawer({setCategory}) {
       <Divider />
       <List>
         {categories.map((text, index) => (
-          <ListItem style={{height:55, borderRadius:8}} button key={text} onClick={setCategory(text)}>
+          <ListItem style={{height:55, borderRadius:8}} button onClick={() => setCategory(text)} key={text}>
             <ListItemText primary={text}/>
           </ListItem>
         ))}
       </List>
     </div>
   );
-
   return (
     <div>
         <React.Fragment key={"left"}>

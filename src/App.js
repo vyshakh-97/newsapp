@@ -10,17 +10,18 @@ function App() {
   const [newsResult, setnewsResult] = useState();
   const newsApi= async () => {
     try{
-      const news= await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&category=${category}`
+      const newscontent= await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&category=${category}`
       );
-      setnewsArray(news.data.articles);
-      setnewsResult(news.data.totalResults);
+      setnewsArray(newscontent.data.articles);
+      setnewsResult(newscontent.data.totalResults);
     } catch (error) {
       console.log(error);
     }
   };
+ 
   useEffect(() => {
     newsApi();
-  },[newsResult, category])
+  },[newsResult, category]);
   return (
     <div className="App">
     <Navigation setCategory={setCategory} />
