@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core'
 import React from 'react'
 import Newscard from './Newscard'
-import "./News.css"
+import "./Styles/News.css"
 const News = ({newsArray,newsResult}) => {
     return (
         <Container maxWidth="md">

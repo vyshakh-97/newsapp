@@ -53,15 +53,8 @@
     color: black;
   }
   
-  .description {
-    font-size: 16px;
-    line-height: 22px;
-    color: #44444d;
-  }
-  
   @media (max-width: 800px) {
     .newscard {
-        display: flex;
       flex-direction: column;
       width: 100%;
     }
