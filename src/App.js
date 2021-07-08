@@ -2,7 +2,7 @@ import './App.css';
 import Navigation from "./Components/Navigation"
 import {useState, useEffect} from "react"
 import axios from 'axios'
-import apikey from "./Components/assets/config"
+import apikey from "./api/config"
 import News from './Components/News';
 function App() {
   const [category, setCategory] = useState("general");

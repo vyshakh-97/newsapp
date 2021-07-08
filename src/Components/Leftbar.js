@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import categories from './assets/Categories';
+import categories from '../assets/Categories';
 const useStyles = makeStyles({
   list: {
     width: 180,
