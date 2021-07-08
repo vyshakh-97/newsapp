@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Styles/Newscard.css"
+import "../Styles/Newscard.css"
 const Newscard = ({ newsItem }) => {
     return (
         <div className="newscard">

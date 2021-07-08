@@ -1,4 +1,4 @@
-import './App.css';
+
 import Navigation from "./Components/Navigation"
 import {useState, useEffect} from "react"
 import axios from 'axios'
