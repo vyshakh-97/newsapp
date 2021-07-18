@@ -1,14 +1,13 @@
-import React, { useContext } from 'react'
-import { NewsContext } from './Newscard'
-import "../Styles/Newscontent.css"
+import React, { useContext } from "react";
+import { NewsContext } from "../providers/NewsContext";
+import "../Styles/Newscontent.css";
 const Newscontent = () => {
-   const newsurl = useContext(NewsContext);
-   console.log(newsurl);
-    return (
-        <div className="newsdetailss">
-            {newsurl}
-        </div>
-    )
-}
+  const { newsUrl } = useContext(NewsContext);
+  return (
+    <div className="newsdetailss">
+      <h1>{newsUrl}</h1>
+    </div>
+  );
+};
 
-export default Newscontent
+export default Newscontent;

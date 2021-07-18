@@ -1,22 +1,28 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 import Home from "./Components/Home";
 import Newscontent from "./Components/Newscontent";
+import { NewsContextProvider } from "./providers/NewsContext";
+
 function App() {
-  
   return (
-    <div>
-    <BrowserRouter>
+    <NewsContextProvider>
+      <BrowserRouter>
         <Switch>
-         <Route path="/" exact>
-        <Home />
-        </Route>  
-        <Route path="/newscontent" exact>
-        <Newscontent />
-        </Route>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/newscontent" exact>
+            <Newscontent />
+          </Route>
         </Switch>
-        </BrowserRouter>
-    </div>
-    )
+      </BrowserRouter>
+    </NewsContextProvider>
+  );
 }
 export default App;
