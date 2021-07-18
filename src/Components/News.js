@@ -10,7 +10,7 @@ const News = ({newsArray}) => {
             <Newscard newsItem={newsItem} key={newsItem.title} />
             ) ) }
         </div>
-        </Container>
+        </Container>    
     )
 }
 
